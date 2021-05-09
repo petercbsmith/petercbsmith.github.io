@@ -1586,10 +1586,10 @@ input, select, textarea {
 
 /* Image */
 
-	img {
+/*	img {
 		height: auto;
 		max-width: 100%
-	}
+	}*/
 
 	.image {
 		display: inline-block;
