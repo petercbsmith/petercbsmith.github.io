@@ -1677,7 +1677,9 @@ input, select, textarea {
 		input[type="reset"].style1,
 		button.style1,
 		.button.style1 {
-			background: #e97770 url("images/overlay.png");
+			/*was #e97770*/
+			/*was #baaef2*/
+			background: #3d6f85 url("images/overlay.png");
 			color: #fff;
 		}
 
@@ -1686,7 +1688,8 @@ input, select, textarea {
 			input[type="reset"].style1:hover,
 			button.style1:hover,
 			.button.style1:hover {
-				background-color: #f98780;
+				/*was #f98780*/
+				background-color: #3d8f85;
 			}
 
 			input[type="button"].style1:active,
@@ -1694,7 +1697,8 @@ input, select, textarea {
 			input[type="reset"].style1:active,
 			button.style1:active,
 			.button.style1:active {
-				background-color: #d96760;
+				/*was #d96760*/
+				background-color: #3d4f85;
 			}
 
 		input[type="button"].style2,
@@ -1728,6 +1732,7 @@ input, select, textarea {
 		input[type="reset"].style3,
 		button.style3,
 		.button.style3 {
+			/*was #2f333b*/
 			background: #2f333b url("images/overlay.png");
 			color: #fff;
 		}
@@ -2005,15 +2010,17 @@ input, select, textarea {
 				height: 38px;
 				background: url("images/shadow.png");
 			}
-
+/*first pink was #e97098*/
+/*light purple was #baaef2*/
+/*the hot ish pink was #c74ca2*/
 		.wrapper.style1 {
-			background: #e97770 url("images/overlay.png");
+			background: #3d6f85 url("images/overlay.png");
 			color: #eee;
 			color: rgba(255, 255, 255, 0.75);
 		}
 
 			.wrapper.style1 .title {
-				background: #e97770 url("images/overlay.png");
+				background: #3d6f85 url("images/overlay.png");
 				color: #fff;
 			}
 
@@ -2167,6 +2174,7 @@ input, select, textarea {
 				}
 
 	.dropotron {
+		/*was #222835*/
 		background: #222835 url("images/overlay.png");
 		background-color: rgba(44, 50, 63, 0.925);
 		padding: 1.25em 1em 1.25em 1em;
@@ -2260,13 +2268,16 @@ input, select, textarea {
 	}
 
 /* Highlights */
+/*color:#e97770*/
+/*this color is the header colors in the highlights section*/
+/*light purple was #a9a7eb*/
 
 	#highlights .highlight {
 		text-align: center;
 	}
 
 		#highlights .highlight h3 {
-			color: #e97770;
+			color: #3d6f85;
 			margin: 0 0 0.75em 0;
 			font-size: 1.15em;
 			letter-spacing: 0.05em;
@@ -2275,6 +2286,7 @@ input, select, textarea {
 /* Main */
 
 /* Footer */
+/*was #282b34*/
 
 	#footer {
 		background: #282b34 url("images/overlay.png");
@@ -2988,3 +3000,61 @@ input, select, textarea {
 						}
 
 	}
+
+
+/*code block?*/
+pre code {
+	font-family:  monospace, monospace;
+	color: black;
+  background-color: #eee;
+  border: 5px solid #999;
+  display: block;
+  padding: 15px;
+}
+
+/*pre, code {
+  font-family: monospace, monospace;
+}
+pre {
+  overflow: auto;
+}
+pre > code {
+  display: block;
+  padding: 1rem;
+  word-wrap: normal;
+}
+
+pre > code[class]::before {
+  content: attr(class);
+  display: block;
+  font-size: small;
+  font-style: italic;
+  color: #6c5f7c;
+  margin: -.4rem 0 .6rem -1.2rem
+}*/
+
+/*code {
+  font-family: MyFancyCustomFont, monospace;
+  font-size: inherit;
+}
+
+/* Code in text */
+p > code,
+li > code,
+dd > code,
+td > code {
+  background: #ffeff0;
+  word-wrap: break-word;
+  box-decoration-break: clone;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+}*/
+
+
+/*body .gist{font-size:13px;line-height:18px;width:53em}*/
+body .gist tr:last-child td {
+  padding-bottom: 15px !important;
+}
+body .gist .gist-meta {
+  display: none;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Custom Markers</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="index.html">Tutorial: Making custom matplotlib markers</a></h1>
+							<!-- <p></p> -->
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="exoplanets.html">Exoplanets</a></li>
+								<li><a href="citsci.html">Education</a></li>
+								<li><a href="resources.html">Resources</a></li>
+								<li><a href="coming-soon.html">Blog</a></li>
+							</ul>
+						</nav>
+
+				</section>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style2">
+					<div class="title"></div>
+					<div class="container">
+
+						<!-- Content -->
+							<div id="content">
+								<article class="box post">
+									<p> This tutorial is also available as a <a href ="https://github.com/petercbsmith/Python-Tutorials" >Jupyter Notebook</a> here </p>
+
+									<p> Add a little personal touch or more options for clarity to your scatter plots with your own custom markers! In this short tutorial I'll explain step by step how you can create and use virtually any shape you can think of as a marker. </p>
+
+									<p> Things you may need: </p>
+
+									<li> svgpath2mpl package (see method 2)</li>
+									<li> svgpathrools package (optional, see step 4a) </li>
+									<li> Text editor (optional, see step 4a) </li>
+									<li> Image processing software (optional, see step 4a) </li>
+
+									<br>
+									<header class="style1">
+										<h2> Method One: Drawing your own simple shapes </h2>
+									</header>
+
+									<p> There are already a variety of <a href="https://matplotlib.org/stable/api/markers_api.html">simple marker shapes</a> to choose from in matplotlib: </p>
+
+									<p style="font-family: monospace; background-color: gray;color:white;"></p>
+									
+									<script src="https://gist.github.com/petercbsmith/f71e460b2717bf808791084976b99c17.js"></script>
+    								<img src="blog_posts/planet_marker/images/plot1.png" alt="" />
+
+    								<p> However, if these don't quite cut it, you can draw your own shapes by creating matplotlib  𝙿𝚊𝚝𝚑  objects. Path objects consist of two lists: one of the shape's vertices, and other with descriptions on how to draw the lines between those vertices, called codes. Here's a simple square:</p>
+
+    								<script src="https://gist.github.com/petercbsmith/44f25a0878199e9dc5bc782825f5d2e5.js"></script>
+
+    								<img src="blog_posts/planet_marker/images/plot2.png" alt="" />
+
+    								<p>But we can get a little more creative. Let's make something else, but still relatively simple:</p>
+    								<script src="https://gist.github.com/petercbsmith/3aa7e7a6e98c615464174601b7b29271.js"></script>
+    								<img src="blog_posts/planet_marker/images/plot3.png" alt="" />
+
+    								<p> It's a leaf! You may have noticed I used two different path codes here. CURVE3 draws a quadratic Bezier curve from that point, uses the next vertex as a "control point" and ends at the point after that (3 points total). CURVE4 behaves similarly except with 2 control points instead of 1 (4 points total). Looking at my creation up close, I'm satisfied and can plot my leaves blowing sinusoidally in the wind:</p>
+    								<script src="https://gist.github.com/petercbsmith/5bc155aaba2aaf8365586a66eea1aa68.js"></script>
+    								<img src="blog_posts/planet_marker/images/plot4.png" alt="" />
+
+    								<br>
+									<header class="style1">
+										<h2> Method Two: Using SVG Images </h2>
+									</header>
+
+									<p> If you want something a little more complex, you can directly plot images in SVG ("Scalar Vector Graphics") format.</p>
+
+									<header class="style2">
+										<h2> Step 1: Your image </h2>
+									</header>
+									<p>To begin, you will need to decide on the image or shape you would like to convert into a marker. The only requirement is that you must have your image as a SVG file. Don't worry - it is possible to convert PDFs and PNGs to SVGs for free online. For best results, keep the image simple and make sure it has a transparent background. You can also save your own digital drawings as SVGs or find SVG clipart online. (Note: when taking images from the internet, always be aware of the copyright and how you will use them. Using copyrighted images once in a limited capacity for "scholarly" purposes (e.g., in your lectures, at a conference, etc.) falls under "fair use" and is fine, but using them in a way in which access is unlimited or you make money is not. If you're worried about legal ambiguity, it's best to stick to images in the public domain or under a creative commons license.) </p>
+
+									<p> Create a new directory and save your image there. </p>
+
+									<header class="style2">
+										<h2> Step 2: Install svgpath2mpl and svgpathtools </h2>
+									</header>
+									<p>Next, you need the svgpath2mpl and svgpathtools packages. You can simply use pip install on the command line or in your notebook. </p>
+
+									<p>The svgpathtools package allows to read in SVG paths into python, and svgpath2mpl will allow us to parse the SVG path of our image to a matplotlib  𝙿𝚊𝚝𝚑  object.</p>
+
+									<p>Note: svgpathtools is not necessary if you prefer to manually copy and past the "d" string of the SVG path. This may or may not be necessary depending on your image. See Step 4a for more detail.</p>
+
+									<script src="https://gist.github.com/petercbsmith/3b155ece9e127fc7fcc794089f3ea913.js"></script>
+
+									<header class="style2">
+										<h2> Step 3: Read in the path </h2>
+									</header>
+
+									<p>Create a new Jupyter Notebook or script in the same directory as your image. Import key functions from our new packages and matplotlib, and read in the path:</p>
+
+									<script src="https://gist.github.com/petercbsmith/6815e50250be6d9c51763fc07d1782db.js"></script>
+
+									<p>What we care about are the vertices and path codes, like our simple drawings above. These are stored in the "d" string in the attributes variable. Pass this through the parse_paths function, which will return a matplotlib path object:</p>
+
+									<script src="https://gist.github.com/petercbsmith/29221b83dd38a0374b21c2cbf9a0c75d.js"></script>
+
+									<header class="style2">
+										<h2> Step 4: Minor touchups </h2>
+									</header>
+
+									<p> You're almost ready to use your new marker! Before you do, you need to do just a few minor adjustments to our path object. First, out of the box, matplotlib will want to plot your marker such that the lower left corner is at the center of your data point, so let's just shift the vertices slightly.</p>
+
+									<script src="https://gist.github.com/petercbsmith/99fd13e8a48d879a2d40818bda8544ab.js"></script>
+
+									<p>Next, the image will be upside down and flipped, so let's take care of that as well. (Note: if you converted a PNG to SVG, you can skip this step)</p>
+
+									<script src="https://gist.github.com/petercbsmith/e8b5fa216fa7398f8941bda800fe614b.js"></script>
+
+									<p>And there you go! Ready to plot!</p>
+
+									<script src="https://gist.github.com/petercbsmith/9c2e865dc73e48377e9f29116d57001b.js"></script>
+
+									<img src="blog_posts/planet_marker/images/plot5.png" alt="" />
+
+									<header class="style2">
+										<h2> Step 4a: Troubleshooting </h2>
+									</header>
+
+									<p>If you plot your new marker and parts of the image are missing, this may be because there are multiple elements not captured by the first "d" string. In this case, you may have to import the SVG path manually:</p>
+
+									<p>Open the SVG file in the image processing software of your choice. Be sure to select both "Import Paths" and "Merge Paths" if you are given the option when opening the file. I use the unfortunately named GIMP (GNU image manipulation program) software, which is free for Windows. Next, we want to export the SVG path. In GIMP, this is done by right clicking on "Imported Path" in the Paths window and selecting Export Path. If you can't find this, you can also select the image, then click Select > To Path. Go to the Paths window, right click on Selection and click Export Path. Save the path as a text file in your directory.</p>
+
+									<p>In photoshop, I believe this is done by selecting the appropriate layer, then right clicking on the selection and selecting Export > Export As. Choose SVG format and export to a text file.</p>
+
+									<p>Open the text file and look for a long string after a d = "....". Copy the string and paste it into your notebook or script and pass it through parse_path. Becasue the string is split into several lines, you'll need to put it in triple quotations (see below). Do the same steps as above after this and all elements of your image should be there.</p>
+
+									<p>Note: By using this method, you will not need the svgpathtools package.</p>
+
+									<script src="https://gist.github.com/petercbsmith/da121e69dbdb1dccc867cf49ac482a96.js"></script>
+
+									<img src="blog_posts/planet_marker/images/plot6.png" alt="" />
+
+									<script src="https://gist.github.com/petercbsmith/05c99b7f2cd36672b432b51ce744d67f.js"></script>
+
+									<img src="blog_posts/planet_marker/images/plot7.png" alt="" />
+
+									<p> All in all, in total your code will look like this:</p>
+
+									<script src="https://gist.github.com/petercbsmith/26fc607fe174d16ccac64ec1c881553e.js"></script>
+
+									<p>If you save this as a script you can import it into your future projects for fun plotting all the time! You can even keep adding as many different markers as you want in just a few short lines of code each.</p>
+
+									<script src="https://gist.github.com/petercbsmith/f27a370ad3bebd55c1fe57eda624e7f7.js"></script>
+
+									<img src="blog_posts/planet_marker/images/plot8.png" alt="" />
+
+									<p>And that's it!! Show me your markers or reach out if you have trouble on Twitter @ExoplanetPete. Happy plotting!</p>
+
+
+
+									
+									
+									
+
+								</article>
+							</div>
+
+					</div>
+				</div>
+
+			<!-- Highlights -->
+				
+
+			<!-- Footer -->
+				
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
