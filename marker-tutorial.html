@@ -10,6 +10,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:title" content="Tutorial: Making custom matplotlib markers"/>
+		<meta name="twitter:description" content="Take your scatter plots to the next level by adding whatever image you want as a marker."/>
+		<meta name="twitter:image" content="blog_assets/marker_tutorial/spinning planet.gif" />
 	</head>
 	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
@@ -30,7 +35,7 @@
 								<li><a href="exoplanets.html">Exoplanets</a></li>
 								<li><a href="citsci.html">Education</a></li>
 								<li><a href="resources.html">Resources</a></li>
-								<li><a href="coming-soon.html">Blog</a></li>
+								<li><a href="blog.html">Blog</a></li>
 							</ul>
 						</nav>
 
@@ -65,21 +70,21 @@
 									<p style="font-family: monospace; background-color: gray;color:white;"></p>
 									
 									<script src="https://gist.github.com/petercbsmith/f71e460b2717bf808791084976b99c17.js"></script>
-    								<img src="blog_posts/planet_marker/images/plot1.png" alt="" />
+    								<img src="blog_assets/marker_tutorial/plot1.png" alt="" />
 
     								<p> However, if these don't quite cut it, you can draw your own shapes by creating matplotlib  𝙿𝚊𝚝𝚑  objects. Path objects consist of two lists: one of the shape's vertices, and other with descriptions on how to draw the lines between those vertices, called codes. Here's a simple square:</p>
 
     								<script src="https://gist.github.com/petercbsmith/44f25a0878199e9dc5bc782825f5d2e5.js"></script>
 
-    								<img src="blog_posts/planet_marker/images/plot2.png" alt="" />
+    								<img src="blog_assets/marker_tutorial/plot2.png" alt="" />
 
     								<p>But we can get a little more creative. Let's make something else, but still relatively simple:</p>
     								<script src="https://gist.github.com/petercbsmith/3aa7e7a6e98c615464174601b7b29271.js"></script>
-    								<img src="blog_posts/planet_marker/images/plot3.png" alt="" />
+    								<img src="blog_assets/marker_tutorial/plot3.png" alt="" />
 
     								<p> It's a leaf! You may have noticed I used two different path codes here. CURVE3 draws a quadratic Bezier curve from that point, uses the next vertex as a "control point" and ends at the point after that (3 points total). CURVE4 behaves similarly except with 2 control points instead of 1 (4 points total). Looking at my creation up close, I'm satisfied and can plot my leaves blowing sinusoidally in the wind:</p>
     								<script src="https://gist.github.com/petercbsmith/5bc155aaba2aaf8365586a66eea1aa68.js"></script>
-    								<img src="blog_posts/planet_marker/images/plot4.png" alt="" />
+    								<img src="blog_assets/marker_tutorial/plot4.png" alt="" />
 
     								<br>
 									<header class="style1">
@@ -100,7 +105,7 @@
 									</header>
 									<p>Next, you need the svgpath2mpl and svgpathtools packages. You can simply use pip install on the command line or in your notebook. </p>
 
-									<p>The svgpathtools package allows to read in SVG paths into python, and svgpath2mpl will allow us to parse the SVG path of our image to a matplotlib  𝙿𝚊𝚝𝚑  object.</p>
+									<p>The svgpathtools package allows us to read SVG paths into python, and svgpath2mpl will allow us to parse the SVG path of our image to a matplotlib  𝙿𝚊𝚝𝚑  object.</p>
 
 									<p>Note: svgpathtools is not necessary if you prefer to manually copy and past the "d" string of the SVG path. This may or may not be necessary depending on your image. See Step 4a for more detail.</p>
 
@@ -134,7 +139,7 @@
 
 									<script src="https://gist.github.com/petercbsmith/9c2e865dc73e48377e9f29116d57001b.js"></script>
 
-									<img src="blog_posts/planet_marker/images/plot5.png" alt="" />
+									<img src="blog_assets/marker_tutorial/plot5.png" alt="" />
 
 									<header class="style2">
 										<h2> Step 4a: Troubleshooting </h2>
@@ -152,11 +157,11 @@
 
 									<script src="https://gist.github.com/petercbsmith/da121e69dbdb1dccc867cf49ac482a96.js"></script>
 
-									<img src="blog_posts/planet_marker/images/plot6.png" alt="" />
+									<img src="blog_assets/marker_tutorial/plot6.png" alt="" />
 
 									<script src="https://gist.github.com/petercbsmith/05c99b7f2cd36672b432b51ce744d67f.js"></script>
 
-									<img src="blog_posts/planet_marker/images/plot7.png" alt="" />
+									<img src="blog_assets/marker_tutorial/plot7.png" alt="" />
 
 									<p> All in all, in total your code will look like this:</p>
 
@@ -166,7 +171,7 @@
 
 									<script src="https://gist.github.com/petercbsmith/f27a370ad3bebd55c1fe57eda624e7f7.js"></script>
 
-									<img src="blog_posts/planet_marker/images/plot8.png" alt="" />
+									<img src="blog_assets/marker_tutorial/plot8.png" alt="" />
 
 									<p>And that's it!! Show me your markers or reach out if you have trouble on Twitter @ExoplanetPete. Happy plotting!</p>
 
