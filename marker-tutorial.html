@@ -72,7 +72,7 @@
 									<script src="https://gist.github.com/petercbsmith/f71e460b2717bf808791084976b99c17.js"></script>
     								<img src="blog_assets/marker_tutorial/plot1.png" alt="" />
 
-    								<p> However, if these don't quite cut it, you can draw your own shapes by creating matplotlib  𝙿𝚊𝚝𝚑  objects. Path objects consist of two lists: one of the shape's vertices, and other with descriptions on how to draw the lines between those vertices, called codes. Here's a simple square:</p>
+    								<p> However, if these don't quite cut it, you can draw your own shapes by creating matplotlib  𝙿𝚊𝚝𝚑  objects. Path objects consist of two lists: one of the shape's vertices, and other with descriptions on how to draw the lines between those vertices, called codes. The path code tells python how to draw the line to the corresponding vertex from the previous one. Here's a simple square:</p>
 
     								<script src="https://gist.github.com/petercbsmith/44f25a0878199e9dc5bc782825f5d2e5.js"></script>
 
@@ -82,7 +82,7 @@
     								<script src="https://gist.github.com/petercbsmith/3aa7e7a6e98c615464174601b7b29271.js"></script>
     								<img src="blog_assets/marker_tutorial/plot3.png" alt="" />
 
-    								<p> It's a leaf! You may have noticed I used two different path codes here. CURVE3 draws a quadratic Bezier curve from that point, uses the next vertex as a "control point" and ends at the point after that (3 points total). CURVE4 behaves similarly except with 2 control points instead of 1 (4 points total). Looking at my creation up close, I'm satisfied and can plot my leaves blowing sinusoidally in the wind:</p>
+    								<p> It's a leaf! You may have noticed I used a different path code here. CURVE3 draws a quadratic Bezier curve over 3 points: 2 endpoints and one control point. The vertex you give the CURVE3 code will be the control point of a curve beginning from the vertex before it and ending at the one after it (3 points total). There is another possible code, CURVE4, which is the same thing but with 2 control points. Check out <a href="https://matplotlib.org/stable/tutorials/advanced/path_tutorial.html">here</a> for more info. Looking at my creation up close, I'm satisfied and can plot my leaves blowing sinusoidally in the wind:</p>
     								<script src="https://gist.github.com/petercbsmith/5bc155aaba2aaf8365586a66eea1aa68.js"></script>
     								<img src="blog_assets/marker_tutorial/plot4.png" alt="" />
 
