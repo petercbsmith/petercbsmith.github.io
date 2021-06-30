@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Colors</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<meta name="twitter:card" content="summary"/>
+		<meta name="twitter:title" content="Plotting with Pride: colors in matplotlib"/>
+		<meta name="twitter:description" content="All the different ways to use and manipuate colors in matplotlib."/>
+		<meta name="twitter:image" content="https://github.com/petercbsmith/petercbsmith.github.io/blob/master/blog_assets/colors_tutorial/rainbow plot.png?raw=true" />
+
+	</head>
+	<body class="no-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<section id="header" class="wrapper">
+
+					<!-- Logo -->
+						<div id="logo">
+							<h1><a href="index.html">Plotting with Pride: colors in matplotlib</a></h1>
+							<!-- <p></p> -->
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="exoplanets.html">Exoplanets</a></li>
+								<li><a href="citsci.html">Education</a></li>
+								<li><a href="resources.html">Resources</a></li>
+								<li><a href="blog.html">Blog</a></li>
+								<li><a href="gallery.html">Gallery</a></li>
+							</ul>
+						</nav>
+
+				</section>
+
+			<!-- Main -->
+				<div id="main" class="wrapper style2">
+					<div class="title"></div>
+					<div class="container">
+
+						<!-- Content -->
+							<div id="content">
+								<article class="box post">
+									<p> This tutorial is also available as a <a href ="https://github.com/petercbsmith/Python-Tutorials" >Jupyter Notebook</a> here </p>
+									<!-- change this!! -->
+
+									<p> In this tutorial I explain some of the different ways you can use and manipulate colors in matplotlib. </p>
+
+
+									<br>
+									<header class="style1">
+										<h2> Part 1: Named colors </h2>
+									</header>
+
+									<p> You may already know that you can pass a color argument through commonly used plotting functions to set the color of your lines and points. Any common color will do, but there are actually more than a thousand named colors recognized by matplotlib. </p>
+
+									
+									<script src="https://gist.github.com/petercbsmith/0253bf23f375568e5ce423eca84d4846.js"></script>
+									<img src="blog_assets/colors_tutorial/plot1.png" alt=""/>
+
+
+    								<p> There are four main groups of named colors in matplotlib: the default Tableau 10 Palette, 8 single character "base" colors, CSS colors, and all the colors from the xkcd survey (https://xkcd.com/color/rgb/). Their names and RGB tuples or HTML hex codes are available in dictionaries in the colors module:</p>
+
+    								<script src="https://gist.github.com/petercbsmith/b8a65eb2fde7480c50bca995e038042e.js"></script>
+
+    								<p>Colors in the Tableau palette must be prefaced with "tab:"</p>
+    								
+    								<script src="https://gist.github.com/petercbsmith/e390a1de277558d4c7b532c577615173.js"></script>
+    								<img src="blog_assets/colors_tutorial/plot2.png" alt=""/>
+
+    								<p> Similarly, xkcd colors must be prefaced with "xkcd:"</p>
+    								
+    								<script src="https://gist.github.com/petercbsmith/3aecb8c82f88f53d4c1e402bc1dc4256.js"></script>
+    								<img src="blog_assets/colors_tutorial/plot3.png" alt=""/>
+
+    								<p> All named colors are in  ⎯𝚌𝚘𝚕𝚘𝚛𝚜⎯𝚏𝚞𝚕𝚕⎯𝚖𝚊𝚙 . You can check if a color you are thinking of will be recognized by matplotlib by searching in there:</p>
+
+    								<script src="https://gist.github.com/petercbsmith/ba7f3538e725d15b8ffe229a8d359c6b.js"></script>
+
+    								<p>If you would like to peruse, just run this code: </p>
+
+    								<script src="https://gist.github.com/petercbsmith/7b29e6c3ffb68dc32dc3c7937e897730.js"></script>
+    								<img src="blog_assets/colors_tutorial/plot4.png" alt="" width=700/>
+    								<!-- change the size of this!!! -->
+
+    								<p>You can also pass in RGB tuples and HTML hex codes. The former must be values between 0 and 1 (divide by 255 if you have a RBG tuple not in that interval), and the latter has to be a string. </p>
+
+    								<script src="https://gist.github.com/petercbsmith/c312be07c0d16905502b1f58050aa563.js"></script>
+    								<img src="blog_assets/colors_tutorial/plot5.png" alt=""/>
+
+
+    								<p>If you search "color picker" in Google, the search engine will provide you an interactive tool with color sliders that provides RGB and HTML hex codes, of which there are 16 million different possible values.</p>
+
+									<p>To get the RGB tuple or HTML hex code of a color you know the same of, you can use the  𝚝𝚘⎯𝚛𝚐𝚋  and  𝚝𝚘⎯𝚑𝚎𝚡  functions:</p>
+
+									<script src="https://gist.github.com/petercbsmith/6f4b6b133de13bea181563ef6d0a3977.js"></script>
+
+									<p>You're not limited to just lines and points: you can set the color of every aspect of your plot.</p>
+
+									<script src="https://gist.github.com/petercbsmith/916593decd87b0298463ff28e7baa6bf.js"></script>
+									<img src="blog_assets/colors_tutorial/plot6.png" alt=""/>
+
+									<p>If there's a color scheme you like, you can set it to your rcParams to keep the rest of your plots like that for the rest of your script or notebook. Here's a figure style based on my alma mater:</p>
+
+									<script src="https://gist.github.com/petercbsmith/3df45950f30d36a500e63af54037f3d3.js"></script>
+									<img src="blog_assets/colors_tutorial/plot7.png" alt=""/>
+
+									<p>Call  𝚖𝚙𝚕.𝚛𝚌𝙿𝚊𝚛𝚊𝚖𝚜.𝚔𝚎𝚢𝚜()  to see everything you can change. Use rcParamsDefault to return to default:</p>
+
+									<script src="https://gist.github.com/petercbsmith/1891da542b0c3c28bd5c5c4d06fbae3a.js"></script>
+									<img src="blog_assets/colors_tutorial/plot8.png" alt=""/>
+
+    								<br>
+									<header class="style1">
+										<h2> Part 2: color cycle </h2>
+									</header>
+
+									<p> By default, plot colors cycle through the 10 Tableau Palette colors. While you could set the color for each plot manually or in a loop, you can also set the color cycle to whatever you want by setting the property cycle attribute of your axis:</p>
+
+									<script src="https://gist.github.com/petercbsmith/1fa0e04e36bad9dec0aa39c581b24e3f.js"></script>
+									<img src="blog_assets/colors_tutorial/plot9.png" alt=""/>
+
+								
+									<p>You can also add this color cycle to your rcParams to set this for all the plots in your notebook or script so you don't have to do this every time:</p>
+
+									<script src="https://gist.github.com/petercbsmith/104b7c1be2765b25c62c42d37018ce2b.js"></script>
+									<img src="blog_assets/colors_tutorial/plot10.png" alt=""/>
+
+									<p> You can also use the string "CN", where N is the position in the color cycle, to get that specific color: </p>
+
+									<script src="https://gist.github.com/petercbsmith/554e495ed37d7d82d03ff4810690ba43.js"></script>
+									<img src="blog_assets/colors_tutorial/plot11.png" alt=""/>
+
+									<p>matplotlib also has a built-in color cycle that is more accessible for those with color vision deficiency. You can use it by using the tableau-colorblind10 style sheet:</p>
+
+									<script src="https://gist.github.com/petercbsmith/79fe4f982dd58f5d06ed2e9c7d7ecf73.js"></script>
+									<img src="blog_assets/colors_tutorial/plot12.png" alt=""/>
+
+									<p>There is also seaborn-colorblind:</p>
+
+									<script src="https://gist.github.com/petercbsmith/e74f70f9533f4535d802764dae79b047.js"></script>
+									<img src="blog_assets/colors_tutorial/plot13.png" alt=""/>
+
+									<p>You can also set the linestyle property cycle to reduce the ambiguity of color:</p>
+
+									<script src="https://gist.github.com/petercbsmith/dcfd587e2b819f8dc944786106507e0d.js"></script>
+									<img src="blog_assets/colors_tutorial/plot14.png" alt=""/>
+
+									<br>
+									<header class="style1">
+										<h2> Part 3: colormaps </h2>
+									</header>
+
+									<p>You may also be familiar with setting colormaps, such as when using the imshow function. The default is called "viridis", but there are many built-in colormaps in matplotlib.</p>
+
+									<script src="https://gist.github.com/petercbsmith/2aa98387f21ecb9c0124bc41550e0d72.js"></script>
+									<img src="blog_assets/colors_tutorial/plot15.png" alt=""/>
+
+									<p>plt.colormaps() returns a list of all 164 built-in colormaps. This includes 82 colormaps and their reverse, which you can call by adding '_r' after the name of your desired colormap. You can run the functions below to plot all of them up:</p>
+
+									<script src="https://gist.github.com/petercbsmith/5f67d10d8073597122f5843198205c72.js"></script>
+									<img src="blog_assets/colors_tutorial/plot16.png" alt="" width=700/>
+									
+
+									<p> There are four main types of colormap: sequential colormaps increase incrementally in brightness or hue. This is useful for representing data in the which the order matters:</p>
+
+									<script src="https://gist.github.com/petercbsmith/a3a5ac983ae2327a4227a1981f89d1c4.js"></script>
+									<img src="blog_assets/colors_tutorial/plot17.png" alt=""/>
+
+									<p>The perceptually uniform sequential colormaps (viridis, plasma, inferno, magma, and cividis) are generally the more accessible colormaps for those with color vision deficiency.</p>
+
+									<p>Diverging colormaps have two colors that also change in brightess and hue to meet at some neutral color in the middle. These are good to show change from some value of interest.</p>
+
+									<script src="https://gist.github.com/petercbsmith/0f5054e619ddc85d685d6b9d3ebce8fd.js"></script>
+									<img src="blog_assets/colors_tutorial/plot18.png" alt=""/>
+
+									<p>Cyclic colormaps come back to meet each other at each end, which is good for values that repeat or come back onto themselves.</p>
+
+									<script src="https://gist.github.com/petercbsmith/53913532266900064dfcd5339779474d.js"></script>
+									<img src="blog_assets/colors_tutorial/plot19.png" alt=""/>
+
+
+									<p>Qualitative colormaps don't have specific ordering and so are better suited for data sets in which the order doesn't matter, or you can use them to choose a list of colors (which we'll get to in a later section).</p>
+
+									<p>As I've shown above, colormaps don't only have use in imshow: you can use the color to plot a third variable in scatter plots:</p>
+
+									<script src="https://gist.github.com/petercbsmith/ec42e674475c505c5292982f3711dadb.js"></script>
+									<img src="blog_assets/colors_tutorial/plot20.png" alt=""/>
+
+									<p>We can also use colormaps for some third variable in line plots. Using a line collection will make plotting several related line plots both easy and efficient:</p>
+
+									<script src="https://gist.github.com/petercbsmith/79be270085fb5206d08d76602e0ee710.js"></script>
+									<img src="blog_assets/colors_tutorial/plot21.png" alt=""/>
+
+									<p>If you're plotting a continuous function, you can also add a nice gradient with pyplot.scatter:</p>
+
+									<script src="https://gist.github.com/petercbsmith/af92bee2f6ea44d477afd1b9a3fd3806.js"></script>
+									<img src="blog_assets/colors_tutorial/plot22.png" alt=""/>
+
+									<p>However, if you have too few points, your data might not appear as one continuous line. Fortunately, you can also add changing color to line plots by using a line collection:</p>
+
+									<script src="https://gist.github.com/petercbsmith/b7c0c6724a9ea786e301ca09de42822f.js"></script>
+									<img src="blog_assets/colors_tutorial/plot23.png" alt=""/>
+
+									<p> If there's a range of values you don't care about, or a range you want to focus on, you can use the vmin and vmax arguments:</p>
+
+									<script src="https://gist.github.com/petercbsmith/af4379062a23835d99a5baf6b9c28894.js"></script>
+									<img src="blog_assets/colors_tutorial/plot24.png" alt=""/>
+
+									<br>
+									<header class="style1">
+										<h2> Part 4: Colormap normalization </h2>
+									</header>
+
+									<p>Real life data is complicated! What if our data isn't linearly ordered?</p>
+
+									<script src="https://gist.github.com/petercbsmith/21d504c894791adeb459271f2a865d18.js"></script>
+									<img src="blog_assets/colors_tutorial/plot25.png" alt=""/>
+
+									<p>We're not learning much from the colors in the above plot. By default, colormaps map colors linearly from the minimum to maximum value. Luckily, we can map the colors in the colormap according to a Normalization class. For the plot above, let's try normalizing it to a logarithmic scale using the LogNorm function in the colors module.</p>
+
+									<script src="https://gist.github.com/petercbsmith/0e531488f220c8d92c74867ef2c0f9cb.js"></script>
+									<img src="blog_assets/colors_tutorial/plot26.png" alt=""/>
+
+									<p>Much better! Similarly, you can normalize to a power law relationship with PowerNorm. PowerNorm takes the argument gamma, which is the power the color values will be mapped to.</p>
+
+									<script src="https://gist.github.com/petercbsmith/ad8cb797f8eab534b46c218bdadc8e94.js"></script>
+									<img src="blog_assets/colors_tutorial/plot27.png" alt=""/>
+
+									<p>Now, let's consider again the example of random data around zero, except this time, presume that the distribution was not perfectly random and there was a skew in one direction. You'll notice, especially if you use a diverging colormap, that zero is not our center color, and in fact pixels with a value of zero will appear light red in the plot below:</p>
+
+									<script src="https://gist.github.com/petercbsmith/0341c1fdc1a4f7f0857f59d5da269b51.js"></script>
+									<img src="blog_assets/colors_tutorial/plot28.png" alt=""/>
+
+									<p>This might be misleading, and we might miss important information, such as how our data tends more positive than negative. We can set the center of our colormap using DivergingNorm, which takes the argument vcenter:</p>
+
+									<script src="https://gist.github.com/petercbsmith/b17f79aa6c970fc1edde1106f517553b.js"></script>
+									<img src="blog_assets/colors_tutorial/plot29.png" alt=""/>
+
+									<p>There, now it's much more clear that the data leans more positive than negative and that white pixels are zero.</p>
+
+									<p>If you want your colors to be discrete, you can use BoundaryNorm. The argument boundaries is the boundary values between colors, and ncolors is the number of discrete colors to choose from in your chosen colormap. By default, the built in colormaps have 256 colors, but this doesn't always have to be the case, as we'll see in the next section.</p>
+
+									<script src="https://gist.github.com/petercbsmith/c75906540e314135320e03cd2d50c9a3.js"></script>
+									<img src="blog_assets/colors_tutorial/plot30.png" alt=""/>
+
+									<p>Check out the documentation for a few other types of normalizations: https://matplotlib.org/stable/tutorials/colors/colormapnorms.html</p>
+
+									<br>
+									<header class="style1">
+										<h2> Part 5: Creating your own colormaps </h2>
+									</header>
+
+									<p>Of course, you're not limited to just the built-in colormaps as-is. You can create your own for countless possibilities. Let's start by adjusting the built-in colormaps by getting a colormap instance with plt.get_cmap. If you would like the colors to be more discrete without setting a BoundaryNorm for each dataset, you can give an integer argument for the number of different color values:</p>
+									
+									<script src="https://gist.github.com/petercbsmith/64e03eb85f022b4cb475f42a852d3071.js"></script>
+									<img src="blog_assets/colors_tutorial/plot31.png" alt=""/>
+									
+									<p>Our new colormap is a function that we can pass floats between 0 and 1 through. This returns an array with dimensions (N points x 4). The first three columns are the RGB tuple values for each point, and the fourth is the alpha (opacity/intensity). Let's create an array of colors that covers the full range of one of the built-in colormaps:</p>
+
+									<script src="https://gist.github.com/petercbsmith/c1a81cbf7a49a49367408b8e2a3b7dca.js"></script>
+									<img src="blog_assets/colors_tutorial/plot32.png" alt=""/>
+
+									<p>We can limit the range of colors as well by not starting and ending at 0 and 1:</p>
+
+									<script src="https://gist.github.com/petercbsmith/bb985ea39de0d24fe605452e60303222.js"></script>
+									<img src="blog_assets/colors_tutorial/plot33.png" alt=""/>
+
+									<p>The floats you pass through your colormap don't have to be linearly increasing from 0 to 1. You could get the reverse colormap by passing an array of values starting at 1 and going to 0, or you could make your colors cyclic by using a sinusoid. As long as it's normalized to be on [0,1], you can pass any array through the colormap.</p>
+
+									<p>We can also change the color array after its creation. Let's change the alphas of our plot to match the derivative:</p>
+
+									<script src="https://gist.github.com/petercbsmith/9ba3c0369c05e9695d33f70f35e047fd.js"></script>
+									<img src="blog_assets/colors_tutorial/plot34.png" alt=""/>
+
+									<p>Or, let's say I really like all but one color in a built in colormap. We can change that too:</p>
+
+									<script src="https://gist.github.com/petercbsmith/ea8b3ad08fd21a4e02a6c3f4e306ea17.js"></script>
+									<img src="blog_assets/colors_tutorial/plot35.png" alt=""/>
+
+									<p>You can create a completely new colormap from a list of colors:</p>
+
+									<script src="https://gist.github.com/petercbsmith/3fa373cb77a4b8cdb0808b421fac71e0.js"></script>
+									<img src="blog_assets/colors_tutorial/plot36.png" alt=""/>
+
+									<p>If you want a gradient of colors interpolated between this list, you can create a Linear segmented colormap:</p>
+
+									<script src="https://gist.github.com/petercbsmith/8b91451dc870cce95aa7e0100d47d625.js"></script>
+									<img src="blog_assets/colors_tutorial/plot37.png" alt=""/>
+
+									<p>You can also use nodes to give greater weight to one color:</p>
+
+									<script src="https://gist.github.com/petercbsmith/aa5818f76422d9b2c425eae1663eb165.js"></script>
+									<img src="blog_assets/colors_tutorial/plot38.png" alt=""/>
+
+									<p>Now, it's easy to get carried away when making your own colormap. When using colors to represent an important dimension of your data, it's best to make things as clear as possible, which means the simpler the better. Usually, just two or three colors will get the job done. Consider a gradient between a light and dark color, or a light color between two darker colors if you want to highlight divergence from some baseline value:</p>
+
+									<script src="https://gist.github.com/petercbsmith/433fc04568bf947a2423d9c8f234c71c.js"></script>
+									<img src="blog_assets/colors_tutorial/plot39.png" alt=""/>
+
+									<script src="https://gist.github.com/petercbsmith/cf0d4141d44af0ef7bd95298eb3e2d0e.js"></script>
+									<img src="blog_assets/colors_tutorial/plot40.png" alt=""/>
+
+									<p>If you want more than three or four colors, it's best to remove any that are too similar and then sort the remaining by brightness. Take the colormap I created a couple of cells up. It's a little confusing with both blue and magenta on either side of black. We're seeing similar colors at different points on the scale, making it a little ambiguous.</p>
+
+									<script src="https://gist.github.com/petercbsmith/fd693a21708d08609da2bbf53016be32.js"></script>
+									<img src="blog_assets/colors_tutorial/plot41.png" alt=""/>
+
+									<p>What's happening on the edges? Is the value going back up? Our eye is also naturally drawn to brighter colors. Is there something special about that white ring?</p>
+
+									<p>Let's sort our colors by their brightness, for which I'll use the "value" in HSV:</p>
+
+									<script src="https://gist.github.com/petercbsmith/7dd88be2bb35f772a3734c9913936e67.js"></script>
+									<img src="blog_assets/colors_tutorial/plot42.png" alt=""/>
+
+									<p>Much better. You can clearly see that the maximum is in the center and then decreases from there.</p>
+
+									<p>You don't have to use colormaps in ways directly tied to your data. For example, you can add a gradient to your color cycle:</p>
+
+									<script src="https://gist.github.com/petercbsmith/4385188f918d51f1e0f9818f0158e978.js"></script>
+									<img src="blog_assets/colors_tutorial/plot43.png" alt=""/>
+
+									<p>Alternatively, you could use one of the perceptually uniform colormaps I mentioned above to make a more accessible color cycle.</p>
+
+									<p>You could even add a gradient to your axes:</p>
+
+									<script src="https://gist.github.com/petercbsmith/9761400a8c9ad036e912a71db60283c5.js"></script>
+									<img src="blog_assets/colors_tutorial/plot44.png" alt=""/>
+
+									<p>Here are some Pride inspired colormaps:</p>
+
+									<script src="https://gist.github.com/petercbsmith/3ca77b904a1f067e838f5400b0bcc130.js"></script>
+									<img src="blog_assets/colors_tutorial/plot45.png" alt="" width=700/>
+									<!-- change the size of this!! -->
+
+									<script src="https://gist.github.com/petercbsmith/b4a819caaa00c6a529a1a7d5badfc57b.js"></script>
+									<img src="blog_assets/colors_tutorial/plot46.png" alt=""/>
+
+									<script src="https://gist.github.com/petercbsmith/41ec5579c053cdfb70a2599cc7bd62d9.js"></script>
+									<img src="blog_assets/colors_tutorial/plot47.png" alt=""/>
+
+									<script src="https://gist.github.com/petercbsmith/14f259d62d1979ba9c8441d0ac065dcd.js"></script>
+									<img src="blog_assets/colors_tutorial/plot48.png" alt=""/>
+
+
+									<p>That's all for now! If you have any questions or want to show me your colorful plots, reach out on twitter @ExoplanetPete. Happy plotting, and happy Pride!</p>
+
+								</article>
+							</div>
+
+					</div>
+				</div>
+
+			<!-- Highlights -->
+				
+
+			<!-- Footer -->
+				
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
