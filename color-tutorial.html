@@ -25,7 +25,7 @@
 
 					<!-- Logo -->
 						<div id="logo">
-							<h1><a href="index.html">Plotting with Pride: colors in matplotlib</a></h1>
+							<h1><a href=#>Plotting with Pride: colors in matplotlib</a></h1>
 							<!-- <p></p> -->
 						</div>
 
@@ -56,11 +56,22 @@
 
 									<p> In this tutorial I explain some of the different ways you can use and manipulate colors in matplotlib. </p>
 
+									<header class="style2">
+										<h2> Contents </h2>
+									</header>
+									<li><a href="#part 1">Named Colors</a></li>
+									<li><a href="#part 2">Color Cycle</a></li>
+									<li><a href="#part 3">Colormaps</a></li>
+									<li><a href="#part 4">Colormap Normalization</a></li>
+									<li><a href="#part 5">Creating Colormaps</a></li>
 
+									<a id="part 1"></a>
 									<br>
 									<header class="style1">
 										<h2> Part 1: Named colors </h2>
 									</header>
+
+
 
 									<p> You may already know that you can pass a color argument through commonly used plotting functions to set the color of your lines and points. Any common color will do, but there are actually more than a thousand named colors recognized by matplotlib. </p>
 
@@ -69,7 +80,7 @@
 									<img src="blog_assets/colors_tutorial/plot1.png" alt=""/>
 
 
-    								<p> There are four main groups of named colors in matplotlib: the default Tableau 10 Palette, 8 single character "base" colors, CSS colors, and all the colors from the xkcd survey (https://xkcd.com/color/rgb/). Their names and RGB tuples or HTML hex codes are available in dictionaries in the colors module:</p>
+    								<p> There are four main groups of named colors in matplotlib: the default Tableau 10 Palette, 8 single character "base" colors, CSS colors, and all the colors from the <a href ="https://xkcd.com/color/rgb/" >xkcd survey</a>. Their names and RGB tuples or HTML hex codes are available in dictionaries in the colors module:</p>
 
     								<script src="https://gist.github.com/petercbsmith/b8a65eb2fde7480c50bca995e038042e.js"></script>
 
@@ -101,11 +112,11 @@
 
     								<p>If you search "color picker" in Google, the search engine will provide you an interactive tool with color sliders that provides RGB and HTML hex codes, of which there are 16 million different possible values.</p>
 
-									<p>To get the RGB tuple or HTML hex code of a color you know the same of, you can use the  𝚝𝚘⎯𝚛𝚐𝚋  and  𝚝𝚘⎯𝚑𝚎𝚡  functions:</p>
+									<p>To get the RGB tuple or HTML hex code of a color you know the name of, you can use the  𝚝𝚘⎯𝚛𝚐𝚋  and  𝚝𝚘⎯𝚑𝚎𝚡  functions:</p>
 
 									<script src="https://gist.github.com/petercbsmith/6f4b6b133de13bea181563ef6d0a3977.js"></script>
 
-									<p>You're not limited to just lines and points: you can set the color of every aspect of your plot.</p>
+									<p>You're not limited to just lines and points - you can set the color of every aspect of your plot.</p>
 
 									<script src="https://gist.github.com/petercbsmith/916593decd87b0298463ff28e7baa6bf.js"></script>
 									<img src="blog_assets/colors_tutorial/plot6.png" alt=""/>
@@ -120,7 +131,10 @@
 									<script src="https://gist.github.com/petercbsmith/1891da542b0c3c28bd5c5c4d06fbae3a.js"></script>
 									<img src="blog_assets/colors_tutorial/plot8.png" alt=""/>
 
+									
+									<a id="part 2"></a>
     								<br>
+    								<a href=#>Back to Top</a>
 									<header class="style1">
 										<h2> Part 2: color cycle </h2>
 									</header>
@@ -156,7 +170,10 @@
 									<script src="https://gist.github.com/petercbsmith/dcfd587e2b819f8dc944786106507e0d.js"></script>
 									<img src="blog_assets/colors_tutorial/plot14.png" alt=""/>
 
+									
+									<a id="part 3"></a>
 									<br>
+									<a href=#>Back to Top</a>
 									<header class="style1">
 										<h2> Part 3: colormaps </h2>
 									</header>
@@ -217,7 +234,11 @@
 									<script src="https://gist.github.com/petercbsmith/af4379062a23835d99a5baf6b9c28894.js"></script>
 									<img src="blog_assets/colors_tutorial/plot24.png" alt=""/>
 
+									
+									<a id="part 4"></a>
+
 									<br>
+									<a href=#>Back to Top</a>
 									<header class="style1">
 										<h2> Part 4: Colormap normalization </h2>
 									</header>
@@ -254,12 +275,17 @@
 									<script src="https://gist.github.com/petercbsmith/c75906540e314135320e03cd2d50c9a3.js"></script>
 									<img src="blog_assets/colors_tutorial/plot30.png" alt=""/>
 
-									<p>Check out the documentation for a few other types of normalizations: https://matplotlib.org/stable/tutorials/colors/colormapnorms.html</p>
+									<p>Check out the <a href= "https://matplotlib.org/stable/tutorials/colors/colormapnorms.html"> documentation</a> for a few other types of normalizations: </p>
 
+
+									<a id="part 5"></a>
 									<br>
+									<a href=#>Back to Top</a>
 									<header class="style1">
 										<h2> Part 5: Creating your own colormaps </h2>
 									</header>
+
+
 
 									<p>Of course, you're not limited to just the built-in colormaps as-is. You can create your own for countless possibilities. Let's start by adjusting the built-in colormaps by getting a colormap instance with plt.get_cmap. If you would like the colors to be more discrete without setting a BoundaryNorm for each dataset, you can give an integer argument for the number of different color values:</p>
 									
@@ -354,6 +380,9 @@
 
 
 									<p>That's all for now! If you have any questions or want to show me your colorful plots, reach out on twitter @ExoplanetPete. Happy plotting, and happy Pride!</p>
+
+									<br>
+									<a href=#>Back to Top</a>
 
 								</article>
 							</div>
