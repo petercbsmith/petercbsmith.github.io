@@ -25,15 +25,16 @@
 					<!-- Logo -->
 						<div id="logo">
 							<h1><a href="gallery.html">Gallery</a></h1>
-							<p>A collection of some of my favorite plots</p>
+							<p>A collection of some of my favorite plots and fun animations</p>
 						</div>
 
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
 								<li><a href="index.html">Home</a></li>
-								<li><a href="exoplanets.html">Exoplanets</a></li>
-								<li><a href="citsci.html">Education</a></li>
+								<li><a href="Peter Smith CV summer 25.pdf">CV</a></li>
+								<li><a href="research.html">Research</a></li>
+								<!-- <li><a href="citsci.html">Education</a></li> -->
 								<li><a href="resources.html">Resources</a></li>
 								<li><a href="blog.html">Blog</a></li>
 								<li><a href="gallery.html">Gallery</a></li>
@@ -123,6 +124,29 @@
 					</header> -->
 					<div class="title">Gallery</div>
 					<div class="container">
+						<div class='row aln-center'>
+							<div class="col-4 col-12-medium">
+								<section class="highlight">
+									<a href="gallery/ccf map medium.gif" class="image featured" download=""><img src="gallery/ccf map medium.gif" alt="" /></a>
+									<h3><a href="gallery/ccf map medium.gif" download>CCF Map</a></h3>
+									<p>Left: By cross correlating a model spectrum with noisy data along possible radial velocities and at different times, we can see the planet cross-correlation signal trace out its orbital path in time. Right: The CCF signal strength at a given exposure is relatively low, but we can build signal by summing correlation coefficients over the planet's entire orbit. This requires acurately knowing the planet's orbital velocity semi-amplitude as well as any systematic velocity offset. Different values for these quantities will trace out different orbital paths in velcoity-phase space. A peak in the right panel will occur for the path that most accurately describes the planet's velocity in time. </p>
+
+								</section>
+							</div>
+
+							<div class="col-4 col-12-medium">
+								<section class="highlight">
+									<a href="gallery/ccf slide w cred.gif" class="image featured" download=""><img src="gallery/ccf slide w cred.gif" alt="" /></a>
+									<h3><a href="gallery/ccf slide w cred.gif" download>Cross-correlation</a></h3>
+									<p>Top: We Doppler shift a model planet spectrum (red) along a grid of possible velocities and compare to the data (black). Bottom: By recording the correlation coefficient as a function of velocity, we can search for a peak in the cross-correlation function at the planet's line-of-sight radial velocity. </p>
+
+								</section>
+							</div>
+						</div>
+
+						<p></p>
+
+
 						<div class="row aln-center">
 							<div class="col-4 col-12-medium">
 								<section class="highlight">
@@ -136,7 +160,7 @@
 								<section class="highlight">
 									<a href="gallery/emission v3.gif" class="image featured" download=""><img src="gallery/emission v3.gif" alt="" /></a>
 									<h3><a href="gallery/emission v3.gif" download>Absorption Spectrum</a></h3>
-									<p>Light emits from the planet surface like a blackbody, and as it moves higher through the atmosphere, light is absorbed, resulting in the top of atmosphere spectrum we can observe. Light is fully obsorbed at different points in the atmosphere at different wavelengths, so we can see a wide range of temperatures and altitudes in the atmosphere.</p>
+									<p>Light emits from the planet surface like a blackbody, and as it moves higher through the atmosphere, light is absorbed, resulting in the top of atmosphere spectrum we can observe. Light is fully absorbed at different points in the atmosphere at different wavelengths, so we can see a wide range of temperatures and altitudes in the atmosphere.</p>
 
 								</section>
 							</div>
@@ -151,12 +175,15 @@
 
 							
 						</div>
+
+						<p></p>
+
 						<div class="row aln-center">
 							<div class="col-4 col-12-medium">
 								<section class="highlight">
 									<a href="https://github.com/petercbsmith/Gallery/raw/main/changing%20R%20v2.gif" class="image featured"><img src="gallery/changing R v2.gif" alt="" /></a>
 									<h3><a href="https://github.com/petercbsmith/Gallery/raw/main/changing%20R%20v2.gif">Varying Spectral Resolution</a></h3>
-									<p>Spectral resolution (R) is a measure of how many different wavelength bins an instrument can split light into. Higher resolution allows us to resolve more molecular lines and characterize exoplanets in more detail.</p>
+									<p>Spectral resolving power (R) is a measure of how many different wavelength bins an instrument can split light into. Higher resolution allows us to resolve more molecular lines and characterize exoplanets in more detail.</p>
 
 								</section>
 							</div>
@@ -164,7 +191,7 @@
 								<section class="highlight">
 									<a href="https://github.com/petercbsmith/Gallery/raw/main/CCF3.gif" class="image featured"><img src="gallery/CCF3.gif" alt="" /></a>
 									<h3><a href="https://github.com/petercbsmith/Gallery/raw/main/CCF3.gif">Cross Correlation Map</a></h3>
-									<p>To get the planet signal out of the post-PCA noise, models are cross-correlated at various potential planet velocities. Typically, we vary the system velocity (how fast the star-planet system is moving away from us) and the planet's orbital velocity to create 2D cross correlation maps. By normalizing these maps by the standard deviation of a region of this map, we can estimate the signal to noise of the planet signal. However, the choise of the region to normalize to can have a large impact on the SNR.</p>
+									<p>To get the planet signal out of the post-PCA noise, models are cross-correlated at various potential planet velocities. Typically, we vary the system velocity (how fast the star-planet system is moving away from us) and the planet's orbital velocity to create 2D cross-correlation maps. By normalizing these maps by the standard deviation of a region of this map, we can estimate the signal to noise of the planet signal. However, the choice of the region to normalize to can have a large impact on the SNR.</p>
 
 								</section>
 							</div>
@@ -172,14 +199,17 @@
 							<div class="col-4 col-12-medium">
 								<section class="highlight">
 									<a href="https://github.com/petercbsmith/Gallery/raw/main/PCA%20v2.gif" class="image featured"><img src="gallery/PCA v2.gif" alt="" /></a>
-									<h3><a href="https://github.com/petercbsmith/Gallery/raw/main/PCA%20v2.gif">Principle Component Analysis</a></h3>
-									<p>One of the methods we use to separate the planet signal from the telluric and stellar signals is Principle Component Analysis (PCA). PCA splits a stacked time series of spectra into its main components. For ground based observations, the first components that dominate the spectrum are things like telluric absorption and instrument artifacts. If we remove these, we are left with residual noise, and because it is so faint and varying in time, the planet signal will still be there buried in the noise.</p>
+									<h3><a href="https://github.com/petercbsmith/Gallery/raw/main/PCA%20v2.gif">Principal Component Analysis</a></h3>
+									<p>One of the methods we use to separate the planet signal from the telluric and stellar signals is Principal Component Analysis (PCA). PCA splits a stacked time series of spectra into its main components. For ground based observations, the first components that dominate the spectrum are things like telluric absorption and instrument artifacts. If we remove these, we are left with residual noise, and because it is so faint and varying in time, the planet signal will still be there buried in the noise.</p>
 
 								</section>
 							</div>
 
 							
 						</div>
+
+						<p></p>
+
 						<div class="row aln-center">
 							<div class="col-4 col-12-medium">
 								<section class="highlight">
@@ -208,6 +238,9 @@
 							
 							
 						</div>
+
+						<p></p>
+
 						<div class="row aln-center">
 							
 							<div class="col-4 col-12-medium">
